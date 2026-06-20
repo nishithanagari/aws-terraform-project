@@ -27,7 +27,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   alarm_description = "Alarm when CPU exceeds 70%"
 
   dimensions = {
-    InstanceId = "i-04706b23f8a4b7d7c"
+    InstanceId = "i-0bdbf66c6d0400a66"
   }
 
   alarm_actions = [
