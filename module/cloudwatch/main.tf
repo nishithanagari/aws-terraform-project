@@ -11,14 +11,7 @@ resource "aws_sns_topic_subscription" "email_alert" {
 }
 
 # EC2 Instance
-resource "aws_instance" "cloudwatch_server" {
-  ami           = "ami-0c02fb55956c7d316" # Amazon Linux 2 (us-east-1)
-  instance_type = "t2.micro"
 
-  tags = {
-    Name = "CloudWatch-Server"
-  }
-}
 
 # CloudWatch CPU Alarm
 resource "aws_cloudwatch_metric_alarm" "high_cpu" {
@@ -34,7 +27,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   alarm_description = "Alarm when CPU exceeds 70%"
 
   dimensions = {
-    InstanceId = aws_instance.cloudwatch_server.id
+    InstanceId = "i-04706b23f8a4b7d7c"
   }
 
   alarm_actions = [
