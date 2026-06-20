@@ -20,3 +20,8 @@ module "S3" {
 module "IAM" {
   source = "./module/IAM"
 }
+
+#cloudwatch
+module "cloudwatch" {
+  source = "./module/cloudwatch"
+}
